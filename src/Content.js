@@ -1,11 +1,10 @@
 import React from 'react';
 import Part from './Part';
 
-const Content = (props) => {
-    console.log(props);
+const Content = ({parts}) => {
     return (
         <div>
-            {props.parts.map((part) => <Part part={part}/>)}
+            {parts.map((part) => <Part part={part}/>)}
         </div>
     );
 }
