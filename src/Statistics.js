@@ -1,5 +1,5 @@
 import React from "react";
-import Counter from "./Counter";
+import Statistic from "./Statistic";
 
 const Statistics = (props) => {
     let q = props.good + props.neutral + props.bad;
@@ -9,12 +9,12 @@ const Statistics = (props) => {
     if (q > 0) {
         return (
             <p>
-                <Counter good={props.good} neutral={props.neutral} bad={props.bad}/>
-
-                All: {q} <br/>
-                Promedio: {(goods + bads) / q} <br/>
-                Positivos: {(goods / q) * 100} %
-
+                <Statistic text="good" value ={props.good} />
+                <Statistic text="neutral" value ={props.neutral} />
+                <Statistic text="bad" value ={props.bad} />
+                <Statistic text="All" value={q}/>
+                <Statistic text="Promedio" value={(goods + bads) / q}/>
+                <Statistic text="Positivos" value={((goods / q) * 100)+"%"}/>
             </p>
         )
     }
