@@ -8,20 +8,24 @@ const Statistics = (props) => {
 
     if (q > 0) {
         return (
-            <p>
-                <Statistic text="good" value ={props.good} />
-                <Statistic text="neutral" value ={props.neutral} />
-                <Statistic text="bad" value ={props.bad} />
+
+            <table cellPadding="2" cellSpacing="2" border="0">
+                <tbody>
+                <Statistic text="good" value={props.good}/>
+                <Statistic text="neutral" value={props.neutral}/>
+                <Statistic text="bad" value={props.bad}/>
                 <Statistic text="All" value={q}/>
                 <Statistic text="Promedio" value={(goods + bads) / q}/>
-                <Statistic text="Positivos" value={((goods / q) * 100)+"%"}/>
-            </p>
+                <Statistic text="Positivos" value={((goods / q) * 100) + "%"}/>
+                </tbody>
+            </table>
+
         )
     }
     else if (q === 0) {
         return (<p>No feedback given</p>)
     }
 
-}
+};
 
 export default Statistics
